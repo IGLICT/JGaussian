@@ -103,7 +103,7 @@ gaussians.densify_and_prune(opt.densify_grad_threshold, opt.min_opacity, scene.c
 
 **3dgs_combine.sh**: We combine all 3DGS-based methods(Gaussian-Mesh, StylizedGS and SeG-Gaussian),like this:
 
-![3DGScombination](assets\3DGScombination.png)
+![3DGScombination](assets/3DGScombination.png)
 
 ## Acknowledgements
 
