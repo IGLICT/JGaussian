@@ -2,8 +2,8 @@
 <h1>JGaussian</h1>
     <p>Institute of Computing Technology, Chinese Academy of Sciences</p>
 
-<div align="center"><a href="http://www.geometrylearning.com/JittorGL"><img src="https://img.shields.io/badge/Project_Page-green" alt="Project Page"></a>
-
+<a href="http://www.geometrylearning.com/JittorGL"><img src="https://img.shields.io/badge/Project_Page-green" alt="Project Page"></a>
+</div>
 
 ## Overview
 
