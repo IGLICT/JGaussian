@@ -7,7 +7,7 @@
 
 ## Overview
 
-![teaser](assets\teaser.png)
+![teaser](assets/teaser.png)
 
 The Gaussian Splatting library **JGaussian** not only extends the application of Gaussian Splatting to areas such as **rendering optimization**, **deformation representation**, **attribute decoupled**, **facial relighting** and **style transformation**, but also provides a unified algorithm interface and an efficient training framework, lowering the barrier for reusing Gaussian-based methods. Currently, JGaussian supports 2 base rendering pipeline(3DGS and 2DGS) and 5 methods: 
 
