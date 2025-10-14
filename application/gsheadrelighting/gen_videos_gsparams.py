@@ -519,7 +519,7 @@ def generate_images(
     image_names=None
 
     if lighting_pattern == 'envmap':
-        envmap_dir = "data/env/resized_32x16"
+        envmap_dir = "data/env"
         lighting_pattern = 'envmap_new_exr'
         # lighting_pattern = 'envmap_env_online'
         ldr=False
