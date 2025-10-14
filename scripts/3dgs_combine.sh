@@ -6,7 +6,7 @@ output_path=/mnt/155_16T/zhangbotao/jgaussian/output/chair
 input_mesh=/mnt/155_16T/zhangbotao/jgaussian/data/MESH/chair/1.obj
 
 #gaussian_mesh training(with apply_weights in seg-gaussian)
-# CUDA_VISIBLE_DEVICES=${device_id} python 3dgs_trainer.py -s ${dataset_path} -m ${output_path} --input_mesh ${input_mesh}
+CUDA_VISIBLE_DEVICES=${device_id} python 3dgs_trainer.py -s ${dataset_path} -m ${output_path} --input_mesh ${input_mesh}
 
 #gaussian_mesh stylization
 iteration=15000
