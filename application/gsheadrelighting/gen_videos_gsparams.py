@@ -517,48 +517,9 @@ def generate_images(
     output video length will be '# seeds/(w*h)*w_frames' frames.
     """
     image_names=None
-    if lighting_pattern == 'transfer':
-        image_names = [f'img{id:08d}.png' for id in lighting_transfer_ids]
-        json_path = os.path.join(ffhq, 'dataset.json' if not rgb_sh else 'dataset_rgb_sh_2.json')
-        with open(json_path, 'r') as f:
-            data = json.load(f)
-        shs = data['sh']
-        shs = [shs[name] for name in image_names]
-        shs = np.array(shs)
-        shs = shs.reshape(shs.shape[0], -1)
-        shs = shs[0][None]
-        # shs[1] *= 0.2
-        # shs *= 0.
-        # shs = [np.array(sh) for sh in shs]
-        # shs = shs.astype({1: np.int64, 2: np.float32}[shs.ndim])
-    elif lighting_pattern == 'circle':
-        if rgb_sh:
-            sh_file_dir = '/home/jovyan/data7/lvhenglei/projects/example_light_rgb'
-            factor = 2.0
-        else:
-            factor = 0.7
 
-        lighting_pattern = 'FFHQ_rgb'
-        sh_file_dir = '/home/jovyan/data7/lvhenglei/projects/example_FFHQ_sh_rgb'
-        factor = 1
-
-        sh_names = os.listdir(sh_file_dir)
-        sh_names.sort()
-        sh_paths = [os.path.join(sh_file_dir, sh_name) for sh_name in sh_names]
-        shs = [np.loadtxt(sh_path)[0:9] * factor for sh_path in sh_paths]
-        # shs.append(shs[-1]*0)
-        lighting_pattern += sh_names[-1]
-        shs = [shs[-1]]
-        shs = np.array(shs)
-        # shs = shs[0][None]
-        # shs[0] *= 0.8
-        # shs[4] *= 0.4
-        # shs[5] *= 0.3
-        # shs[6] *= 0.3
-    elif lighting_pattern == 'envmap':
-        envmap_dir = "/mnt/155_16T/zhangbotao/jgaussian/data/env/resized_32x16"
-        # envmap_dir = "/home/jovyan/data7/lvhenglei/projects/example_hdr"
-        # envmap_dir = "/home/jovyan/data7/lvhenglei/projects/example_env_online"
+    if lighting_pattern == 'envmap':
+        envmap_dir = "data/env/resized_32x16"
         lighting_pattern = 'envmap_new_exr'
         # lighting_pattern = 'envmap_env_online'
         ldr=False
@@ -567,10 +528,9 @@ def generate_images(
         envmap_paths = [os.path.join(envmap_dir, envmap_name) for envmap_name in envmap_names if not envmap_name.endswith('resize.hdr')]
         print(envmap_paths)
         shs = [get_SH_from_env(envmap_path, rotation_angles=(0,0,0), ldr=ldr) for envmap_path in envmap_paths]
-        # up = np.loadtxt('/home/jovyan/data7/lvhenglei/projects/example_light/rotate_light_02.txt')
-        # new_sh = np.stack([up*0.7, up*0.8, up*0.9], 0)
-        # shs.append(new_sh*0.7)
         shs = np.array(shs)
+    else:
+        print("error,only support envmap lighting_pattern")
             
 
 
@@ -578,60 +538,7 @@ def generate_images(
     if not os.path.exists(outdir):
         os.makedirs(outdir, exist_ok=True)
     import pickle
-    # print('Loading networks from "%s"...' % network_pkl)
-    # import sys
-    # sys.modules["torch_utils"] = jittorutils
-    # sys.modules["torch_utils.ops"] = jittorutils
-
-    # with open(network_pkl, "rb") as f:  # 'rb' 表示二进制读取
-    #     data = pickle.load(f)
-    # if g_type == "G_ema":
-    #         G_ema = data["G_ema"]
-    #         G = G_ema
-    # elif g_type == "G":
-    #         G = data["G"]
-    # else:
-    #         print("Wrong G_type: {}".format(g_type))
-    #         exit(-1)
-    # G_new = GSGenerator(**G.init_kwargs)
-    # w_pytorch= []
-    # w_jittor = []
-    # for name, param in G_new.named_parameters():
-    #     w_jittor.append(name)
-    #     # print(f"Layer: {name}")
-    #     # print(f"Shape: {param.shape}")
-    # state_dict = G.state_dict()
-    # for key, value in state_dict.items():
-    #     w_pytorch.append(key)
-    #     # print(f"Layer: {key}")
-    #     # print(f"Shape: {value.shape}")
-    # for name, param in state_dict.items():
-    #     if name in ['_xyz','_xyz_bg']:
-    #         name = 'jt' + name
-    #     if name in G_new.state_dict():
-    #         # 获取 Jittor 中对应的参数
-    #         jt_param = G_new.state_dict()[name]
-    #         # 检查形状是否匹配
-    #         if tuple(param.shape) == tuple(jt_param.shape):
-    #             # 将 PyTorch Tensor 转为 Jittor Tensor 并赋值
-    #             jt_param.assign(jt.array(param.cpu().detach().numpy()))
-    #         else:
-    #             print(f"[ERR] 形状不匹配: {name} (PyTorch: {param.shape} vs Jittor: {jt_param.shape})")
-    #     else:
-    #         print(f"[ERR] 未找到对应层: {name}")
-    # G = G_new        
-    # # G.save("/mnt/155_16T/zhangbotao/jgaussian/checkpoints/gshead.pkl")
-    # # 打包权重和参数
-    # save_data = {
-    #     "state_dict": G.state_dict(),  # 模型权重
-    #     "init_kwargs": G.init_kwargs,  # 初始化参数
-    # }
-
-    # # 保存到单个 .pkl 文件
-    # save_path = "/mnt/155_16T/zhangbotao/jgaussian/checkpoints/gshead.pkl"
-    # with open(save_path, "wb") as f:
-    #     pickle.dump(save_data, f)
-
+   
     with open(network_pkl, "rb") as f:
         loaded_data = pickle.load(f)
     # 重新初始化模型
