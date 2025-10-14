@@ -55,7 +55,7 @@ There is an example of final data directory:
 
 
 
-**!!!**We provide example multi-view dataset, style image(used in [StylizedGS](https://arxiv.org/abs/2404.05220)), environment map (used in [GSHeadRelight](https://dl.acm.org/doi/10.1145/3721238.3730614) and [DeferredGS](https://arxiv.org/abs/2404.09412))  here.
+**!!!**We provide example multi-view dataset, style image(used in [StylizedGS](https://arxiv.org/abs/2404.05220)), environment map (used in [GSHeadRelight](https://dl.acm.org/doi/10.1145/3721238.3730614) and [DeferredGS](https://arxiv.org/abs/2404.09412))  [here](https://drive.google.com/file/d/1x_p2q0OtfMwCs3DQ_Wgg6d3bw_CTH9mb/view?usp=drive_link).Extract it and place it into the JGaussian folder.
 
 ## Start
 
