@@ -107,5 +107,5 @@ gaussians.densify_and_prune(opt.densify_grad_threshold, opt.min_opacity, scene.c
 
 ## Acknowledgements
 
-Thanks to these great repositories: [Gaussian-splatting-Jittor](https://github.com/otakuxiang/gaussian-splatting-jittor.git), [3DGS](https://github.com/graphdeco-inria/gaussian-splatting/),[2DGS]( https://github.com/hbb1/2d-gaussian-splatting),[GSGAN](https://github.com/hse1032/GSGANand ) and many other inspiring works in the community.
+Thanks to these great repositories: [Gaussian-splatting-Jittor](https://github.com/otakuxiang/gaussian-splatting-jittor.git), [3DGS](https://github.com/graphdeco-inria/gaussian-splatting/),[2DGS]( https://github.com/hbb1/2d-gaussian-splatting),[GSGAN](https://github.com/hse1032/GSGAN) and many other inspiring works in the community.
 
