@@ -86,6 +86,7 @@ sh scripts/deferredgs.sh
 
 **gsheadrelighting.sh**: inference in [GSHeadRelight](https://dl.acm.org/doi/10.1145/3721238.3730614)
 
+**mipgs.sh**: training and rendering in [Mip-Splatting](https://arxiv.org/abs/2311.16493)
 
 
 We provide the detailed usage of "apply_weight" in SeG-Gaussian,it can be used for gaussian split in any 3DGS-based method([Gaussian-Mesh](https://dl.acm.org/doi/10.1145/3687756),[StylizedGS](https://ieeexplore.ieee.org/document/11143957)):
@@ -108,5 +109,5 @@ gaussians.densify_and_prune(opt.densify_grad_threshold, opt.min_opacity, scene.c
 
 ## Acknowledgements
 
-Thanks to these great repositories: [Gaussian-splatting-Jittor](https://github.com/otakuxiang/gaussian-splatting-jittor.git), [3DGS](https://github.com/graphdeco-inria/gaussian-splatting/),[2DGS]( https://github.com/hbb1/2d-gaussian-splatting),[GSGAN](https://github.com/hse1032/GSGAN) and many other inspiring works in the community.
+Thanks to these great repositories: [Gaussian-splatting-Jittor](https://github.com/otakuxiang/gaussian-splatting-jittor.git), [Mip-splatting-Jittor](https://github.com/lishaobingdong/mip-splatting-jittor.git), [3DGS](https://github.com/graphdeco-inria/gaussian-splatting/), [2DGS]( https://github.com/hbb1/2d-gaussian-splatting), [GSGAN](https://github.com/hse1032/GSGAN) and many other inspiring works in the community.
 
