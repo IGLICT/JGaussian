@@ -19,6 +19,12 @@ cmake .
 make -j
 cd ..
 
+# Mip-splatting
+cd mip_diff_gaussian_rasterizater
+cmake .
+make -j
+cd ..
+
 cd simple_knn
 cmake .
 make -j
