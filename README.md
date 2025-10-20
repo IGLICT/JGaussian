@@ -56,7 +56,7 @@ There is an example of final data directory:
 
 
 
-**!!!**We provide example multi-view dataset, style image(used in [StylizedGS](https://arxiv.org/abs/2404.05220)), environment map (used in [GSHeadRelight](https://dl.acm.org/doi/10.1145/3721238.3730614) and [DeferredGS](https://arxiv.org/abs/2404.09412))  [here](https://drive.google.com/file/d/1x_p2q0OtfMwCs3DQ_Wgg6d3bw_CTH9mb/view?usp=drive_link).Extract it and place it into the JGaussian folder.
+**!!!**We provide example multi-view dataset, style image(used in [StylizedGS](https://ieeexplore.ieee.org/document/11143957)), environment map (used in [GSHeadRelight](https://dl.acm.org/doi/10.1145/3721238.3730614) and [DeferredGS](https://ieeexplore.ieee.org/document/10964878))  [here](https://drive.google.com/file/d/1x_p2q0OtfMwCs3DQ_Wgg6d3bw_CTH9mb/view?usp=drive_link).Extract it and place it into the JGaussian folder.
 
 ## Start
 
@@ -80,15 +80,15 @@ sh scripts/deferredgs.sh
 
 **gsmesh.sh:** training, rendering and deformation in [Gaussian-Mesh](https://dl.acm.org/doi/10.1145/3687756)
 
-**stylized_gaussian.sh**: spatial,color,base control stylization in [StylizedGS](https://arxiv.org/abs/2404.05220)
+**stylized_gaussian.sh**: spatial,color,base control stylization in [StylizedGS](https://ieeexplore.ieee.org/document/11143957)
 
-**deferredgs.sh**: training, rendering and relighting in [DeferredGS](https://arxiv.org/abs/2404.09412)
+**deferredgs.sh**: training, rendering and relighting in [DeferredGS](https://ieeexplore.ieee.org/document/10964878)
 
 **gsheadrelighting.sh**: inference in [GSHeadRelight](https://dl.acm.org/doi/10.1145/3721238.3730614)
 
 
 
-We provide the detailed usage of "apply_weight" in SeG-Gaussian,it can be used for gaussian split in any 3DGS-based method([Gaussian-Mesh](https://dl.acm.org/doi/10.1145/3687756),[StylizedGS](https://arxiv.org/abs/2404.05220)):
+We provide the detailed usage of "apply_weight" in SeG-Gaussian,it can be used for gaussian split in any 3DGS-based method([Gaussian-Mesh](https://dl.acm.org/doi/10.1145/3687756),[StylizedGS](https://ieeexplore.ieee.org/document/11143957)):
 
 ```python
 for i in range(mask_cam.segment.max().long().item()+1):
