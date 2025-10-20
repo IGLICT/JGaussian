@@ -33,7 +33,7 @@ pip install -r requirements.txt
 Then, Compile the submodules based on C++ and Cuda. 
 
 ```bash
-sh preprocess/submodule._install.sh 
+sh preprocess/submodule_install.sh 
 ```
 
 There is an example of final data directory:
