@@ -62,6 +62,12 @@ class ModelParams(ParamGroup):
         self.brdf_mode = "envmap"
         self.brdf_envmap_res = 64
         self.novel_brdf_envmap = ""
+        # mip
+        self._kernel_size = 0.3
+        self.ray_jitter = False
+        self.resample_gt_image = False
+        self.load_allres = False
+        self.sample_more_highres = False
         super().__init__(parser, "Loading Parameters", sentinel)
 
     def extract(self, args):
@@ -112,7 +118,7 @@ class OptimizationParams(ParamGroup):
         self.lambda_reg = 0.
         self.lambda_alpha = 1.0
         self.is_apply_weight = True
-        self.lambda_mrloss = 6.0
+        self.lambda_mrloss = 8
 
         self.h = 0.05
 
