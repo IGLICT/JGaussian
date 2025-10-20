@@ -67,7 +67,10 @@ class Camera(nn.Module):
         self.full_proj_transform = jt.nn.bmm(self.world_view_transform.unsqueeze(0),self.projection_matrix.unsqueeze(0)).squeeze(0)
         self.camera_center = jt.linalg.inv(self.world_view_transform)[3, :3]
 
-      
+        tan_fovx = np.tan(self.FoVx / 2.0)
+        tan_fovy = np.tan(self.FoVy / 2.0)
+        self.focal_y = self.image_height / (2.0 * tan_fovy)
+        self.focal_x = self.image_width / (2.0 * tan_fovx)
     
 
 class MiniCam:
