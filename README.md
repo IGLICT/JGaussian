@@ -13,10 +13,10 @@
 The Gaussian Splatting library **JGaussian** not only extends the application of Gaussian Splatting to areas such as **rendering optimization**, **deformation representation**, **attribute decoupled**, **facial relighting** and **style transformation**, but also provides a unified algorithm interface and an efficient training framework, lowering the barrier for reusing Gaussian-based methods. Currently, JGaussian supports 2 base rendering pipeline(3DGS and 2DGS) and 5 methods: 
 
 - [Gaussian-Mesh](https://dl.acm.org/doi/10.1145/3687756)
-- [DeferredGS](https://arxiv.org/abs/2404.09412)
+- [DeferredGS](https://ieeexplore.ieee.org/document/10964878)
 - [GSHeadRelight](https://dl.acm.org/doi/10.1145/3721238.3730614)
-- SeG-Gaussian
-- [StylizedGS](https://arxiv.org/abs/2404.05220)
+- [SeG-Gaussian](https://ieeexplore.ieee.org/document/11184660)
+- [StylizedGS](https://ieeexplore.ieee.org/document/11143957)
 
 
 ## Environment Set-up
